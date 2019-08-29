@@ -36,6 +36,11 @@
             <version>7.0.0</version>
         </dependency>
         <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>27.1-jre</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>0.17.2</version>
@@ -49,6 +54,11 @@
             <groupId>org.fluentlenium</groupId>
             <artifactId>fluentlenium-festassert</artifactId>
             <version>0.13.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.archaius</groupId>
+            <artifactId>archaius-core</artifactId>
+            <version>0.7.6</version>
         </dependency>
     </dependencies>
 </project>
