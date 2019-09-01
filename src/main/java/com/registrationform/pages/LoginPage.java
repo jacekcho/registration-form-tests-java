@@ -20,7 +20,7 @@ public class LoginPage {
         page(this);
     }
 
-    public String getConfirmation() {
+    public String getRegisterConfirmation() {
         return confirmation.text();
     }
 

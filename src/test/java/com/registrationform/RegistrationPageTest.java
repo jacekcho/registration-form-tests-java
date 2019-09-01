@@ -27,6 +27,6 @@ public class RegistrationPageTest extends SeleniumBase {
                 .clickRegisterButton();
 
         // then
-        assertThat(loginPage.getConfirmation()).isEqualTo("Registration successful");
+        assertThat(loginPage.getRegisterConfirmation()).isEqualTo("Registration successful");
     }
 }
