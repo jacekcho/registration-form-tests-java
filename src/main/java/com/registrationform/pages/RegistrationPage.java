@@ -19,6 +19,9 @@ public class RegistrationPage {
     @FindBy(name = "password")
     private SelenideElement password;
 
+    @FindBy(id = "registerButton")
+    private SelenideElement registerButton;
+
     RegistrationPage() {
         page(this);
     }
@@ -43,8 +46,9 @@ public class RegistrationPage {
         return this;
     }
 
-    public void clickRegisterButton() {
-        //TODO
+    public LoginPage clickRegisterButton() {
+        registerButton.click();
+        return new LoginPage();
     }
 
 }

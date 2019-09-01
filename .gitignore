@@ -28,3 +28,6 @@ registration-form-tests-java.iml
 
 # target
 target/
+
+# build
+build/
