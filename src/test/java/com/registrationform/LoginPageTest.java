@@ -1,8 +1,8 @@
 package com.registrationform;
 
+import com.registrationform.pages.HomePage;
 import com.registrationform.pages.LoginPage;
 import com.registrationform.pages.MainPage;
-import com.registrationform.pages.RegistrationPage;
 import com.registrationform.selenium.SeleniumBase;
 import com.registrationform.utils.User;
 import org.testng.annotations.BeforeMethod;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import static org.fest.assertions.Assertions.assertThat;
 
-public class RegistrationPageTest extends SeleniumBase {
+public class LoginPageTest extends SeleniumBase {
 
     private User user;
 
@@ -22,19 +22,19 @@ public class RegistrationPageTest extends SeleniumBase {
     @Test
     public void shouldRegisterNewUserAndLogIn() {
         // given
-        RegistrationPage registrationPage = new MainPage()
+        LoginPage loginPage = new MainPage()
                 .open()
-                .navigateToRegistrationPage();
+                .navigateToRegistrationPage()
+                .registerNewUser(user);
 
         // when
-        LoginPage loginPage = registrationPage
-                .setFirstName(user.getFirstName())
-                .setLastName(user.getLastName())
+        HomePage homePage = loginPage
                 .setUserName(user.getUsername())
                 .setPassword(user.getPassword())
-                .clickRegisterButton();
+                .clickLoginButton();
 
         // then
-        assertThat(loginPage.getRegisterConfirmation()).isEqualTo("Registration successful");
+        assertThat(homePage.getWelcomeMessage()).isEqualTo(String.format("Hello %s %s, Good to see you!", user.getFirstName(), user.getLastName())); // TODO change this assertions for tests
     }
+
 }

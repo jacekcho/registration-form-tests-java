@@ -20,4 +20,9 @@ public class Generators {
         return faker.pokemon().name();
     }
 
+    public static String randomPassword() {
+        return faker.witcher().monster()
+                .replace(" ", "");
+    }
+
 }

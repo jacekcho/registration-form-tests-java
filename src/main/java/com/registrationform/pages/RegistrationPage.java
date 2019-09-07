@@ -1,6 +1,7 @@
 package com.registrationform.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import com.registrationform.utils.User;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Selenide.page;
@@ -49,6 +50,14 @@ public class RegistrationPage {
     public LoginPage clickRegisterButton() {
         registerButton.click();
         return new LoginPage();
+    }
+
+    public LoginPage registerNewUser(User user) {
+        return setFirstName(user.getFirstName())
+                .setLastName(user.getLastName())
+                .setUserName(user.getUsername()) // TODO remove this line
+                .setPassword(user.getPassword())
+                .clickRegisterButton();
     }
 
 }

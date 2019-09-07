@@ -13,8 +13,14 @@ public class LoginPage {
     @FindBy(id = "registrationButton")
     private SelenideElement registrationButton;
 
-    @FindBy(css = "[class='alert alert-success']")
+    @FindBy(className = "alert-success")
     private SelenideElement confirmation;
+
+    @FindBy(css = "input[data-test='name']") // TODO remove this selector for tests
+    private SelenideElement userName;
+
+    @FindBy(name = "password")
+    private SelenideElement password;
 
     LoginPage() {
         page(this);
@@ -24,4 +30,18 @@ public class LoginPage {
         return confirmation.text();
     }
 
+    public LoginPage setUserName(String userName) {
+        this.userName.setValue(userName);
+        return this;
+    }
+
+    public LoginPage setPassword(String password) {
+        this.password.setValue(password);
+        return this;
+    }
+
+    public HomePage clickLoginButton() {
+        loginButton.click();
+        return new HomePage();
+    }
 }
