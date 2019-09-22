@@ -55,7 +55,6 @@ public class RegistrationPage {
     public LoginPage registerNewUser(User user) {
         return setFirstName(user.getFirstName())
                 .setLastName(user.getLastName())
-                .setUserName(user.getUsername()) // TODO remove this line
                 .setPassword(user.getPassword())
                 .clickRegisterButton();
     }

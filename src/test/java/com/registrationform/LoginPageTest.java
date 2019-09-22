@@ -34,7 +34,7 @@ public class LoginPageTest extends SeleniumBase {
                 .clickLoginButton();
 
         // then
-        assertThat(homePage.getWelcomeMessage()).isEqualTo(String.format("Hello %s %s, Good to see you!", user.getFirstName(), user.getLastName())); // TODO change this assertions for tests
+        assertThat(homePage.getWelcomeMessage()).isEqualTo(user.getFirstName() + " " + user.getLastName());
     }
 
 }
