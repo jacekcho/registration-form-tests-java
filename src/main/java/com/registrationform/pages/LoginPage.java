@@ -16,10 +16,10 @@ public class LoginPage {
     @FindBy(className = "alert-success")
     private SelenideElement confirmation;
 
-    @FindBy(css = "input[data-test='name']") // TODO remove this selector for tests
+    @FindBy(css = "input[data-test='name']")
     private SelenideElement userName;
 
-    @FindBy(name = "password")
+    @FindBy(css = "input[data-test='password']")
     private SelenideElement password;
 
     LoginPage() {
