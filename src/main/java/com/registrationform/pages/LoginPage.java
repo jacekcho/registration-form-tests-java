@@ -16,7 +16,7 @@ public class LoginPage {
     @FindBy(className = "alert-success")
     private SelenideElement confirmation;
 
-    @FindBy(name = "password")
+    @FindBy(css = "input[data-test='password']")
     private SelenideElement password;
 
     LoginPage() {
@@ -27,7 +27,8 @@ public class LoginPage {
         return confirmation.text();
     }
 
-    public LoginPage setUserName(String userName) { // TODO
+    public LoginPage setUserName(String userName) {
+        // TODO
         return this;
     }
 
