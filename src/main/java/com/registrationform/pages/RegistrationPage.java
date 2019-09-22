@@ -20,7 +20,7 @@ public class RegistrationPage {
     @FindBy(name = "password")
     private SelenideElement password;
 
-    @FindBy(id = "registerButton")
+    @FindBy(css = "[data-test='registerButton'")
     private SelenideElement registerButton;
 
     RegistrationPage() {
