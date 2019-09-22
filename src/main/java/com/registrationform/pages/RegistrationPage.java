@@ -20,7 +20,7 @@ public class RegistrationPage {
     @FindBy(name = "password")
     private SelenideElement password;
 
-    @FindBy(id = "registerButton")
+    @FindBy(id = "registerButton]")
     private SelenideElement registerButton;
 
     RegistrationPage() {
@@ -48,13 +48,14 @@ public class RegistrationPage {
     }
 
     public LoginPage clickRegisterButton() {
-        registerButton.click();
+        this.registerButton.click();
         return new LoginPage();
     }
 
     public LoginPage registerNewUser(User user) {
         return setFirstName(user.getFirstName())
                 .setLastName(user.getLastName())
+                .setUserName(user.getUsername())
                 .setPassword(user.getPassword())
                 .clickRegisterButton();
     }

@@ -16,8 +16,8 @@ public class LoginPage {
     @FindBy(className = "alert-success")
     private SelenideElement confirmation;
 
-    @FindBy(css = "input[data-test='password']")
-    private SelenideElement password;
+    @FindBy(css = "input[data-test='name']")
+    private SelenideElement userName;
 
     LoginPage() {
         page(this);
@@ -28,12 +28,12 @@ public class LoginPage {
     }
 
     public LoginPage setUserName(String userName) {
-        // TODO
+        this.userName.setValue(userName);
         return this;
     }
 
     public LoginPage setPassword(String password) {
-        this.password.setValue(password);
+        // TODO
         return this;
     }
 

@@ -30,7 +30,7 @@ public class LoginPageTest extends SeleniumBase {
         // when
         HomePage homePage = loginPage
                 .setUserName(user.getUsername())
-                .setPassword(user.getPassword())
+                .setPassword(user.getPassword()) // TODO
                 .clickLoginButton();
 
         // then
